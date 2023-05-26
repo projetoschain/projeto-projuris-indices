@@ -1,4 +1,4 @@
-import Card from "../../../../components/Card";
+
 import * as S from "../../styles";
 import * as IS from "./styles";
 
@@ -33,21 +33,8 @@ const Events = () => {
   return (
     <S.Section id="events">
       <IS.Container>
-        <S.H1>Eventos em destaque</S.H1>
+        <S.H1>Calculadora de indices</S.H1>
         <IS.CardsArea>
-          {events.map((event) => (
-            <Card
-              key={event.level}
-              card={{
-                title: event.title,
-                price: event.aproximado,
-                description: event.description,
-                rendimento: event.rendimento,
-                aproximado: event.aproximado,
-                level: event.level
-              }}
-            />
-          ))}
         </IS.CardsArea>
       </IS.Container>
     </S.Section>

@@ -1,7 +1,6 @@
-import Button from "../../../../components/Button";
+import Button from "../../../../Button";
 import * as S from "../../styles";
 import * as IS from "./styles";
-import { FaTelegram } from "react-icons/fa";
 
 const Presentation = () => {
   return (
@@ -17,7 +16,7 @@ const Presentation = () => {
         <IS.Main>
           <div className="texts">
             <S.TextColored>
-            SMART TICKETS <span>FOR MUSIC, SPORTS, GAMES AND MORE.</span>
+            SEJA BEM VINDO <span>A CALCULADORA DE INDICES PROJURIS.</span>
             </S.TextColored>
             <div
               style={{
@@ -49,8 +48,6 @@ const Presentation = () => {
               window.open("https://t.me/wvwcoinofficial", "_blank");
             }}
           >
-            <FaTelegram color="white" size={28} />
-            <p>Community</p>
           </div>
         </IS.Main>
       </IS.Container>

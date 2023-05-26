@@ -1,4 +1,4 @@
-import "../globals";
+import "../src/styles/calc.css";
 import type { AppProps } from "next/app";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { QueryClient, QueryClientProvider } from "react-query";
