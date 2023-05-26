@@ -12,7 +12,7 @@ const HeaderLanding = () => {
     <S.Container isVisible={isVisible}>
       <S.Logo>
         <Image
-          src="https://i.ibb.co/Zf3N6tg/logomarca.png"
+          src="https://i.ibb.co/0K4ZDj4/Projuris-Horizontal-Tagline-Monocrom-tico-Branco.png"
           alt="Logo"
           height={100}
           width={200}
@@ -24,7 +24,7 @@ const HeaderLanding = () => {
       </S.Logo>
       <S.Options>
         <S.Option>
-          <a href="#events">Eventos</a>
+          <a href="#events"><Button width={130} value="Calculadora" /></a>
         </S.Option>
       </S.Options>
     </S.Container>
