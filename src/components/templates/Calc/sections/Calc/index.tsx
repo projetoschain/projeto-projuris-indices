@@ -58,7 +58,7 @@ const Calc = () => {
     setValorTotal(valorTotalComCorrecao);
 
       // Cálculo do valor total + correção + juros
-  const valorTotalCorrecaoJuros = (valorTotal + valorCorrecao) + ((valorTotal + valorCorrecao) * (totalJuros / 100));
+  const valorTotalCorrecaoJuros = (valorTotalComCorrecao * (totalJuros / 100));
   setValorTotalCorrecaoJuros(valorTotalCorrecaoJuros);
 
     

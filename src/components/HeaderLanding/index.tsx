@@ -24,11 +24,9 @@ const HeaderLanding = () => {
       </S.Logo>
       <S.Options>
         <S.Option>
-          <a href="#calc"><Button width={130} value="  Calculadora  " /></a>
-        </S.Option>
-        <S.Option>     
-        <a href="#fronts"><Button width={130} value="Buscar fontes" /></a>
-          </S.Option>
+          <a href="#calc"><Button width={130} value="Calculadora" /></a>
+        </S.Option> 
+          <Link href={"/font"}><Button width={130} value="Buscar Fonte" /></Link>       
       </S.Options>
     </S.Container>
   );

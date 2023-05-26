@@ -16,8 +16,8 @@ const IndexPage = ({ }) => {
   return (
     <>
       <Head>
-        <title>Plataforma - Smart Tickets</title>
-        <meta name="description" content="Smart Tickets" />
+        <title>Calculadora Projuris</title>
+        <meta name="description" content="Calculadora de indices" />
         <link rel="icon" href="" />
       </Head>
         <AppLayout>
