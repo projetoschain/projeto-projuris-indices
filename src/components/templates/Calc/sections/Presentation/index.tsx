@@ -24,22 +24,11 @@ const Presentation = () => {
               }}
             >
               <S.Text>
-              Tickets aren’t just an entry credential anymore. Own the moment in time. The moment and experience are captured in a single NFT.
+              Desenvolvida por Bruno Santos e Cristian Andrade
               </S.Text>
             </div>
             <div className="buttons-presentation">
-              <a href="#plans">
-                <Button value="VER EVENTOS" />
-              </a>
-
-              <Button
-                onClick={() => {
-                  window.open("https://t.me/wvwcoinofficial", "_blank");
-                }}
-                colored={false}
-                value="COMUNIDADE"
-              />
-            </div>
+             </div>
           </div>
 
           <div
