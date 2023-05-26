@@ -133,4 +133,13 @@ export const ResultValue = styled.span`
   color: #0927aa;
   font-size: 14px;
   font-weight: bold;
+  white-space: nowrap; /* Impede quebras de linha */
+`;
+
+export const ValorTotalCorrecaoJuros = styled.span`
+  /* Estilos para o valor total + correção + juros */
+  color: #0927aa;
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap; /* Impede quebras de linha */
 `;

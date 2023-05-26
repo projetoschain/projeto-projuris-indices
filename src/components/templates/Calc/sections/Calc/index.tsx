@@ -25,6 +25,8 @@ const Calc = () => {
   const [valorCorrecao, setValorCorrecao] = useState(0);
   const [totalJuros, setTotalJuros] = useState(0);
   const [valorTotal, setValorTotal] = useState(0);
+  const [valorTotalCorrecaoJuros, setValorTotalCorrecaoJuros] = useState(0);
+
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +41,6 @@ const Calc = () => {
 
   setQuantidadeMeses(monthsDiff - 1);
 
-
   // Cálculo do coeficiente do índice
   const coeficiente = indiceFinal / indiceInicial - 1;
   setCoeficienteIndice(coeficiente);
@@ -52,9 +53,15 @@ const Calc = () => {
     const juros = quantidadeMeses * aliquotaJuros;
     setTotalJuros(juros);
 
-    // Cálculo do valor total
-    const valorTotalCalculado = valorPrincipal + valorCorrecaoMonetaria + juros;
-    setValorTotal(valorTotalCalculado);
+    // Cálculo do valor do pedido + correção
+    const valorTotalComCorrecao = valorPrincipal + valorCorrecao;
+    setValorTotal(valorTotalComCorrecao);
+
+      // Cálculo do valor total + correção + juros
+  const valorTotalCorrecaoJuros = (valorTotal + valorCorrecao) + ((valorTotal + valorCorrecao) * (totalJuros / 100));
+  setValorTotalCorrecaoJuros(valorTotalCorrecaoJuros);
+
+    
   };
 
   return (
@@ -83,6 +90,7 @@ const Calc = () => {
           <CalcInput
             type="number"
             value={indiceInicial}
+            step="0.01"
             onChange={(e) => setIndiceInicial(parseFloat(e.target.value))}
           />
         </CalcField>
@@ -92,6 +100,7 @@ const Calc = () => {
           <CalcInput
             type="number"
             value={indiceFinal}
+            step="0.01"
             onChange={(e) => setIndiceFinal(parseFloat(e.target.value))}
           />
         </CalcField>
@@ -101,48 +110,56 @@ const Calc = () => {
           <CalcInput
             type="number"
             value={valorPrincipal}
+            step="0.01"
             onChange={(e) => setValorPrincipal(parseFloat(e.target.value))}
           />
         </CalcField>
 
-        <CalcField>
-          <CalcLabel>Alíquota de juros:</CalcLabel>
-          <CalcInput
-            type="number"
-            value={aliquotaJuros}
-            onChange={(e) => setAliquotaJuros(parseFloat(e.target.value))}
-          />
-        </CalcField>
+              <CalcField>
+        <CalcLabel>Alíquota de juros:</CalcLabel>
+        <CalcInput
+          type="number"
+          value={aliquotaJuros}
+          step="0.01"
+          onChange={(e) => setAliquotaJuros(parseFloat(e.target.value))}
+        />
+      </CalcField>
 
         <Button width={130} value="Calcular" onClick={handleCalculate} />
       </CalcForm>
 
-      <CalcResult>
+            <CalcResult>
         <ResultField>
           <ResultLabel>Quantidade de meses:</ResultLabel>
-          <ResultValue>{quantidadeMeses}</ResultValue>
+          <ResultValue>{quantidadeMeses.toLocaleString()}</ResultValue>
         </ResultField>
 
         <ResultField>
           <ResultLabel>Coeficiente do índice:</ResultLabel>
-          <ResultValue>{coeficienteIndice}</ResultValue>
+          <ResultValue>{coeficienteIndice.toLocaleString('pt-BR', { minimumFractionDigits: 4, maximumFractionDigits: 4 })}</ResultValue>
         </ResultField>
 
         <ResultField>
           <ResultLabel>Valor correção monetária:</ResultLabel>
-          <ResultValue>{valorCorrecao}</ResultValue>
+          <ResultValue>{valorCorrecao.toLocaleString('pt-BR', { minimumFractionDigits: 4, maximumFractionDigits: 4 })}</ResultValue>
         </ResultField>
 
         <ResultField>
           <ResultLabel>Total de juros:</ResultLabel>
-          <ResultValue>{totalJuros}</ResultValue>
+          <ResultValue>{totalJuros.toLocaleString('pt-BR', { minimumFractionDigits: 4, maximumFractionDigits: 4 })}</ResultValue>
         </ResultField>
 
         <ResultField>
-          <ResultLabel>Valor total:</ResultLabel>
-          <ResultValue>{valorTotal}</ResultValue>
+          <ResultLabel>Valor total do pedido + correção:</ResultLabel>
+          <ResultValue>{valorTotal.toLocaleString('pt-BR', { minimumFractionDigits: 4, maximumFractionDigits: 4 })}</ResultValue>
         </ResultField>
       </CalcResult>
+
+      <ResultField>
+    <ResultLabel>Valor total + correção + juros:</ResultLabel>
+    <ResultValue>{valorTotalCorrecaoJuros.toLocaleString('pt-BR', { minimumFractionDigits: 4, maximumFractionDigits: 4 })}</ResultValue>
+        </ResultField>
+
     </CalcContainer>
   );
 };
