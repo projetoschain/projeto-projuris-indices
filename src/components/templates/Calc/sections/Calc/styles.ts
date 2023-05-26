@@ -49,3 +49,56 @@ export const CurrentBalance = styled.div`
   padding: 10px;
   border-radius: 10px;
 `;
+
+export const CalcContainer = styled.div`
+  /* Estilos para o container da calculadora */
+  max-width: 400px;
+  margin: 0 auto;
+`;
+
+export const CalcForm = styled.form`
+  /* Estilos para o formulário da calculadora */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+`;
+
+export const CalcField = styled.div`
+  /* Estilos para cada campo da calculadora */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const CalcLabel = styled.label`
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+`;
+
+export const CalcInput = styled.input`
+  /* Estilos para os inputs */
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+`;
+
+export const CalcButton = styled.button`
+  /* Estilos para o botão de cálculo */
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
+export const CalcResult = styled.div`
+  /* Estilos para exibir os resultados */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
