@@ -28,7 +28,32 @@ const Calc = () => {
 
   const handleCalculate = (e: React.FormEvent) => {
     e.preventDefault();
-    // Lógica de cálculo aqui
+
+    // Lógica de cálculo
+    const dataInclusaoDate = new Date(dataInclusao);
+    const dataAtualizacaoDate = new Date(dataAtualizacao);
+
+    // Cálculo da quantidade de meses
+    const monthsDiff = (dataAtualizacaoDate.getFullYear() - dataInclusaoDate.getFullYear()) * 12 +
+      (dataAtualizacaoDate.getMonth() - dataInclusaoDate.getMonth());
+
+    setQuantidadeMeses(monthsDiff - 1);
+
+    // Cálculo do coeficiente do índice
+    const coeficiente = indiceFinal / (indiceInicial - 1);
+    setCoeficienteIndice(coeficiente);
+
+    // Cálculo do valor de correção monetária
+    const valorCorrecaoMonetaria = coeficiente * valorPrincipal;
+    setValorCorrecao(valorCorrecaoMonetaria);
+
+    // Cálculo do total de juros
+    const juros = quantidadeMeses * aliquotaJuros;
+    setTotalJuros(juros);
+
+    // Cálculo do valor total
+    const valorTotalCalculado = valorPrincipal + valorCorrecaoMonetaria + juros;
+    setValorTotal(valorTotalCalculado);
   };
 
   return (
@@ -88,7 +113,7 @@ const Calc = () => {
           />
         </CalcField>
 
-        <Button width={130} value=" Calcular" />
+        <Button width={130} value="Calcular" onClick={handleCalculate} />
       </CalcForm>
 
       <CalcResult>
