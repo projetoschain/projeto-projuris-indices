@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "@/src/components/Button";
 
 export const Container = styled.div`
   height: 100%;
@@ -70,6 +71,14 @@ export const CalcField = styled.div`
   gap: 10px;
 `;
 
+export const CalcFieldRight = styled.div`
+  /* Estilos para a coluna direita */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end; /* Alinhamento à direita */
+`;
+
 export const CalcLabel = styled.label`
   color: #a7a7a7;
   font-size: 14px;
@@ -101,4 +110,27 @@ export const CalcResult = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 25px; /* Adiciona margem superior */
+`;
+
+
+export const ResultField = styled.div`
+  /* Estilos para cada campo de resultado */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const ResultLabel = styled.label`
+  /* Estilos para o rótulo do campo de resultado */
+  color: #a7a7a7;
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+export const ResultValue = styled.span`
+  /* Estilos para o valor do campo de resultado */
+  color: #0927aa;
+  font-size: 14px;
+  font-weight: bold;
 `;

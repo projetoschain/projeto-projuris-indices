@@ -6,7 +6,10 @@ import {
   CalcLabel,
   CalcInput,
   CalcButton,
-  CalcResult
+  CalcResult,
+  ResultField,
+  ResultLabel,
+  ResultValue
 } from './styles';
 import Button from '@/src/components/Button';
 
@@ -89,30 +92,30 @@ const Calc = () => {
       </CalcForm>
 
       <CalcResult>
-        <div>
-          <CalcLabel>Quantidade de meses:</CalcLabel>
-          <span>{quantidadeMeses}</span>
-        </div>
+        <ResultField>
+          <ResultLabel>Quantidade de meses:</ResultLabel>
+          <ResultValue>{quantidadeMeses}</ResultValue>
+        </ResultField>
 
-        <div>
-          <CalcLabel>Coeficiente do índice:</CalcLabel>
-          <span>{coeficienteIndice}</span>
-        </div>
+        <ResultField>
+          <ResultLabel>Coeficiente do índice:</ResultLabel>
+          <ResultValue>{coeficienteIndice}</ResultValue>
+        </ResultField>
 
-        <div>
-          <CalcLabel>Valor correção monetária:</CalcLabel>
-          <span>{valorCorrecao}</span>
-        </div>
+        <ResultField>
+          <ResultLabel>Valor correção monetária:</ResultLabel>
+          <ResultValue>{valorCorrecao}</ResultValue>
+        </ResultField>
 
-        <div>
-          <CalcLabel>Total de juros:</CalcLabel>
-          <span>{totalJuros}</span>
-        </div>
+        <ResultField>
+          <ResultLabel>Total de juros:</ResultLabel>
+          <ResultValue>{totalJuros}</ResultValue>
+        </ResultField>
 
-        <div>
-          <CalcLabel>Valor total:</CalcLabel>
-          <span>{valorTotal}</span>
-        </div>
+        <ResultField>
+          <ResultLabel>Valor total:</ResultLabel>
+          <ResultValue>{valorTotal}</ResultValue>
+        </ResultField>
       </CalcResult>
     </CalcContainer>
   );
