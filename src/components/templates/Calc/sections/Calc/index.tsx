@@ -33,15 +33,16 @@ const Calc = () => {
     const dataInclusaoDate = new Date(dataInclusao);
     const dataAtualizacaoDate = new Date(dataAtualizacao);
 
-    // Cálculo da quantidade de meses
-    const monthsDiff = (dataAtualizacaoDate.getFullYear() - dataInclusaoDate.getFullYear()) * 12 +
-      (dataAtualizacaoDate.getMonth() - dataInclusaoDate.getMonth());
+  // Cálculo da quantidade de meses
+  const monthsDiff = (dataAtualizacaoDate.getFullYear() - dataInclusaoDate.getFullYear()) * 12 +
+  (dataAtualizacaoDate.getMonth() - dataInclusaoDate.getMonth());
 
-    setQuantidadeMeses(monthsDiff - 1);
+  setQuantidadeMeses(monthsDiff - 1);
 
-    // Cálculo do coeficiente do índice
-    const coeficiente = indiceFinal / (indiceInicial - 1);
-    setCoeficienteIndice(coeficiente);
+
+  // Cálculo do coeficiente do índice
+  const coeficiente = indiceFinal / indiceInicial - 1;
+  setCoeficienteIndice(coeficiente);
 
     // Cálculo do valor de correção monetária
     const valorCorrecaoMonetaria = coeficiente * valorPrincipal;
