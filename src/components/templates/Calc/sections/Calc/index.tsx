@@ -3,7 +3,7 @@ import * as S from "../../styles";
 import * as IS from "./styles";
 
 
-const Events = () => {
+const Calc = () => {
   return (
     <S.Section id="events">
       <IS.Container>
@@ -15,4 +15,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default Calc;

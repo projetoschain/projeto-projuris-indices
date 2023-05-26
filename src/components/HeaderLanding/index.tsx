@@ -24,8 +24,11 @@ const HeaderLanding = () => {
       </S.Logo>
       <S.Options>
         <S.Option>
-          <a href="#events"><Button width={130} value="Calculadora" /></a>
+          <a href="#events"><Button width={130} value="  Calculadora  " /></a>
         </S.Option>
+        <S.Option>     
+        <a href="#fronts"><Button width={130} value="Buscar fontes" /></a>
+          </S.Option>
       </S.Options>
     </S.Container>
   );

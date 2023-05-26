@@ -1,6 +1,6 @@
 import HeaderLanding from "../../HeaderLanding";
 import Mockups from "./sections/Mockups";
-import Events from "./sections/events";
+import Calc from "./sections/Calc";
 import Presentation from "./sections/Presentation";
 import WhitePaper from "./sections/WhitePaper";
 import * as S from "./styles";
@@ -10,7 +10,7 @@ const LandingPage = () => {
       <S.Container>
         <HeaderLanding />
         <Presentation />
-        <Events />
+        <Calc />
         <Mockups />
         <WhitePaper />
       </S.Container>
