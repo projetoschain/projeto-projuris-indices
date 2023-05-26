@@ -71,7 +71,7 @@ export const CalcField = styled.div`
 `;
 
 export const CalcLabel = styled.label`
-  color: #333;
+  color: #a7a7a7;
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
@@ -89,7 +89,7 @@ export const CalcInput = styled.input`
 export const CalcButton = styled.button`
   /* Estilos para o botão de cálculo */
   padding: 10px 20px;
-  background-color: #333;
+  background-color: #a7a7a7;
   color: #fff;
   border: none;
   border-radius: 4px;

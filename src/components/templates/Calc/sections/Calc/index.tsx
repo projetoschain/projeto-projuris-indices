@@ -8,6 +8,7 @@ import {
   CalcButton,
   CalcResult
 } from './styles';
+import Button from '@/src/components/Button';
 
 const Calc = () => {
   const [dataInclusao, setDataInclusao] = useState('');
@@ -84,7 +85,7 @@ const Calc = () => {
           />
         </CalcField>
 
-        <CalcButton onClick={handleCalculate}>Calcular</CalcButton>
+        <Button width={130} value=" Calcular" />
       </CalcForm>
 
       <CalcResult>
