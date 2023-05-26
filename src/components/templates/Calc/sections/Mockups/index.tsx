@@ -18,10 +18,10 @@ const Mockups = () => {
           />
         </IS.ImageMockup>
         <IS.TextArea>
-          <S.H1>O futuro dos ingressos</S.H1>
+          <S.H1>Chamaaaaaaaaaaaaa</S.H1>
           <S.Text>
-          Fornecemos as ferramentas para você criar valor real a partir do relacionamento com os fãs e recompensar os fãs pela participação e lealdade ao evento.
-          Nós permitimos um controle incomparável do mercado secundário. Abra vários novos fluxos de receita enquanto expõe anunciantes, cambistas e fraudadores.
+          O time de suporte da Projuris não é professor de matetamica, sendo assim foi desenvolvida essa calculadora para facilitar a nossa vida, em nome de jesus, AMÉM !!!!!!!
+          Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla 
           </S.Text>
         </IS.TextArea>
       </IS.Container>

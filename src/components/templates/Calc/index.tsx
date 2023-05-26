@@ -2,6 +2,7 @@ import HeaderLanding from "../../HeaderLanding";
 import Mockups from "./sections/Mockups";
 import Events from "./sections/events";
 import Presentation from "./sections/Presentation";
+import WhitePaper from "./sections/WhitePaper";
 import * as S from "./styles";
 
 const LandingPage = () => {
@@ -11,6 +12,7 @@ const LandingPage = () => {
         <Presentation />
         <Events />
         <Mockups />
+        <WhitePaper />
       </S.Container>
   );
 };
