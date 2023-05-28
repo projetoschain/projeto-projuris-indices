@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import {
   CalcContainer,
   CalcForm,
@@ -30,43 +31,30 @@ const Calc = () => {
   const [valorTotalCorrecaoJuros, setValorTotalCorrecaoJuros] = useState(0);
   const [valorTotalAtualizado, setValorTotalAtualizado] = useState(0); // Nova variável de estado
 
-  const handleCalculate = (e: { preventDefault: () => void; }) => {
+  const handleCalculate = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
-    // Lógica de cálculo
+  
     const dataInclusaoDate = new Date(dataInclusao);
     const dataAtualizacaoDate = new Date(dataAtualizacao);
-
-    // Cálculo da quantidade de meses
+  
     const monthsDiff =
       (dataAtualizacaoDate.getFullYear() - dataInclusaoDate.getFullYear()) * 12 +
       (dataAtualizacaoDate.getMonth() - dataInclusaoDate.getMonth());
-
-    setQuantidadeMeses(monthsDiff - 1);
-
-    // Cálculo do coeficiente do índice
+  
     const coeficiente = indiceFinal / indiceInicial - 1;
-    setCoeficienteIndice(coeficiente);
-
-    // Cálculo do valor de correção monetária
     const valorCorrecaoMonetaria = coeficiente * valorPrincipal;
-    setValorCorrecao(valorCorrecaoMonetaria);
-
-    // Cálculo do total de juros
-    const juros = quantidadeMeses * aliquotaJuros;
-    setTotalJuros(juros);
-
-    // Cálculo do valor do pedido + correção
-    const valorTotalComCorrecao = valorPrincipal + valorCorrecao;
-    setValorTotal(valorTotalComCorrecao);
-
-    // Cálculo do valor total + correção + juros
-    const valorTotalCorrecaoJuros = valorTotalComCorrecao * (totalJuros / 100);
-    setValorTotalCorrecaoJuros(valorTotalCorrecaoJuros);
-
-
-    // valor total atualizado
+    const juros = quantidadeMeses * (aliquotaJuros / 100); 
+  
+    const valorTotalComCorrecao = valorPrincipal + valorCorrecaoMonetaria;
+    const valorTotalCorrecaoJuros = valorTotalComCorrecao * juros;
     const valorTotalAtualizado = valorTotalCorrecaoJuros + valorTotalComCorrecao;
+  
+    setQuantidadeMeses(monthsDiff - 1);
+    setCoeficienteIndice(coeficiente);
+    setValorCorrecao(valorCorrecaoMonetaria);
+    setTotalJuros(juros);
+    setValorTotal(valorTotalComCorrecao);
+    setValorTotalCorrecaoJuros(valorTotalCorrecaoJuros);
     setValorTotalAtualizado(valorTotalAtualizado);
   };
 
@@ -155,8 +143,8 @@ const Calc = () => {
             <ResultLabel>Valor correção monetária:</ResultLabel>
             <ResultValue>
               {valorCorrecao.toLocaleString('pt-BR', {
-                minimumFractionDigits: 4,
-                maximumFractionDigits: 4
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
               })}
             </ResultValue>
           </ResultField>
@@ -164,29 +152,29 @@ const Calc = () => {
           <ResultField>
             <ResultLabel>Total % de juros:</ResultLabel>
             <ResultValue>
-              {totalJuros.toLocaleString('pt-BR', {
-                minimumFractionDigits: 4,
-                maximumFractionDigits: 4
-              })}
-            </ResultValue>
+          {totalJuros.toLocaleString('pt-BR', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 4,
+          })}%
+        </ResultValue>
           </ResultField>
 
           <ResultField>
             <ResultLabel>Total R$ de juros:</ResultLabel>
             <ResultValue>
               {valorTotalCorrecaoJuros.toLocaleString('pt-BR', {
-                minimumFractionDigits: 4,
-                maximumFractionDigits: 4
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
               })}
             </ResultValue>
           </ResultField>
 
           <ResultField>
-            <ResultLabel>Valor total do pedido + correção:</ResultLabel>
+            <ResultLabel>Valor pedido + correção:</ResultLabel>
             <ResultValue>
               {valorTotal.toLocaleString('pt-BR', {
-                minimumFractionDigits: 4,
-                maximumFractionDigits: 4
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
               })}
             </ResultValue>
           </ResultField>
@@ -195,8 +183,8 @@ const Calc = () => {
             <ResultLabel>Valor total atualizado:</ResultLabel>
             <ResultValue>
               {valorTotalAtualizado.toLocaleString('pt-BR', {
-                minimumFractionDigits: 4,
-                maximumFractionDigits: 4
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
               })}
             </ResultValue>
           </ResultField>
