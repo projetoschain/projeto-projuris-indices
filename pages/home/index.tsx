@@ -9,7 +9,7 @@ const Calc: NextPage = () => {
         <title>Calculadora Indices Projuris</title>
         <meta
           name="description"
-          content="Junte-se à nossa plataforma revolucionária que une artistas, organizadores e o público em uma experiência única com a tecnologia blockchain."
+          content="Junte-se à nossa plataforma revolucionária."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

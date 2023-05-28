@@ -1,6 +1,6 @@
 import Head from "next/head";
 import AppLayout from "../src/components/layout/AppLayout";
-import Calc from "./calc";
+import Calc from "./home";
 
 export async function getStaticProps() {
 
