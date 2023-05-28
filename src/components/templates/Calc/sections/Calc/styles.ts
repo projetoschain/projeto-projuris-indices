@@ -52,17 +52,20 @@ export const CurrentBalance = styled.div`
 `;
 
 export const CalcContainer = styled.div`
-  /* Estilos para o container da calculadora */
-  max-width: 400px;
+  display: flex;
+  max-width: 800px;
   margin: 0 auto;
 `;
 
+
 export const CalcForm = styled.form`
-  /* Estilos para o formulário da calculadora */
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-right: 20px; /* Adiciona margem à direita */
 `;
+
+
 
 export const CalcField = styled.div`
   /* Estilos para cada campo da calculadora */
@@ -106,35 +109,42 @@ export const CalcButton = styled.button`
 `;
 
 export const CalcResult = styled.div`
-  /* Estilos para exibir os resultados */
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 25px; /* Adiciona margem superior */
+  margin-top: 25px;
+  padding-left: 20px;
+  border-left: 1px solid #ccc;
+  background-color: #00000000; /* Substitua #blue pela cor desejada */
+  border-radius: 5px;
+  padding: 20px;
 `;
 
-
 export const ResultField = styled.div`
-  /* Estilos para cada campo de resultado */
   display: flex;
   align-items: center;
   gap: 10px;
+  border-bottom: 1px solid #ccc; /* Adiciona uma linha separadora */
+  padding-bottom: 5px; /* Adiciona espaço abaixo da linha */
 `;
 
 export const ResultLabel = styled.label`
   /* Estilos para o rótulo do campo de resultado */
   color: #a7a7a7;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
 `;
 
 export const ResultValue = styled.span`
-  /* Estilos para o valor do campo de resultado */
   color: #0927aa;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
-  white-space: nowrap; /* Impede quebras de linha */
+  white-space: nowrap;
+  text-align: right; /* Alinha os números à direita */
+  flex: 1; /* Ocupa o espaço restante */
 `;
+
 
 export const ValorTotalCorrecaoJuros = styled.span`
   /* Estilos para o valor total + correção + juros */

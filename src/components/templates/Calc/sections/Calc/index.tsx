@@ -12,6 +12,7 @@ import {
   ResultValue
 } from './styles';
 import Button from '@/src/components/Button';
+import NumberFormat from 'react-number-format';
 import { Section } from '../../styles';
 
 const Calc = () => {
@@ -60,10 +61,11 @@ const Calc = () => {
     setValorTotal(valorTotalComCorrecao);
 
     // Cálculo do valor total + correção + juros
-    const valorTotalCorrecaoJuros = valorTotalComCorrecao * (1 + totalJuros / 100);
+    const valorTotalCorrecaoJuros = valorTotalComCorrecao * (totalJuros / 100);
     setValorTotalCorrecaoJuros(valorTotalCorrecaoJuros);
 
-    // Cálculo da soma de valor total + correção + juros com valor total do pedido + correção
+
+    // valor total atualizado
     const valorTotalAtualizado = valorTotalCorrecaoJuros + valorTotalComCorrecao;
     setValorTotalAtualizado(valorTotalAtualizado);
   };
@@ -170,16 +172,6 @@ const Calc = () => {
           </ResultField>
 
           <ResultField>
-            <ResultLabel>Valor total do pedido + correção:</ResultLabel>
-            <ResultValue>
-              {valorTotal.toLocaleString('pt-BR', {
-                minimumFractionDigits: 4,
-                maximumFractionDigits: 4
-              })}
-            </ResultValue>
-          </ResultField>
-
-          <ResultField>
             <ResultLabel>Total R$ de juros:</ResultLabel>
             <ResultValue>
               {valorTotalCorrecaoJuros.toLocaleString('pt-BR', {
@@ -189,7 +181,16 @@ const Calc = () => {
             </ResultValue>
           </ResultField>
 
-          {/* Nova label e valor */}
+          <ResultField>
+            <ResultLabel>Valor total do pedido + correção:</ResultLabel>
+            <ResultValue>
+              {valorTotal.toLocaleString('pt-BR', {
+                minimumFractionDigits: 4,
+                maximumFractionDigits: 4
+              })}
+            </ResultValue>
+          </ResultField>
+
           <ResultField>
             <ResultLabel>Valor total atualizado:</ResultLabel>
             <ResultValue>
