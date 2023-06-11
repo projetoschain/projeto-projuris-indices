@@ -1,6 +1,7 @@
 import Head from "next/head";
 import AppLayout from "../src/components/layout/AppLayout";
 import Calc from "./home";
+import Font from "./Font"
 
 export async function getStaticProps() {
 
@@ -22,6 +23,7 @@ const IndexPage = ({ }) => {
       </Head>
         <AppLayout>
           <Calc />
+          <Font />
         </AppLayout>
     </>
   );
